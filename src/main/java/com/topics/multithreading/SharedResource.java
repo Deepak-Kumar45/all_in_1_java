@@ -2,13 +2,13 @@ package com.topics.multithreading;
 
 public class SharedResource {
 
-    private boolean flag = false;
+    private volatile boolean flag = false;
 
     public void setFlag(boolean flag) {
         this.flag = flag;
     }
 
-    public boolean getFlag() {
+    public synchronized boolean getFlag() {
         return flag;
     }
 
