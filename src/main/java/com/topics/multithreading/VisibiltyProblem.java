@@ -27,13 +27,13 @@ public class VisibiltyProblem {
         // }).start();
 
         Thread t1 = new Thread(() -> {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 5000; i++) {
                 sharedResource.increment();
             }
         });
 
         Thread t2 = new Thread(() -> {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 5000; i++) {
                 sharedResource.increment();
             }
         });

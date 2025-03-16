@@ -2,6 +2,18 @@ package com.topics.multithreading;
 
 public class SharedResource {
 
+    private static int counter = 0;
+
+    public static synchronized void increment() {
+        synchronized (SharedResource.class) {
+            counter++;
+        }
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
     private volatile boolean flag = false;
 
     public void setFlag(boolean flag) {
@@ -12,19 +24,10 @@ public class SharedResource {
         return flag;
     }
 
-    private int counter = 0;
-
     // public void increment() {
     // synchronized (this) {
     // counter++;
     // }
     // }
 
-    public synchronized void increment() {
-        counter++;
-    }
-
-    public int getCounter() {
-        return counter;
-    }
 }
