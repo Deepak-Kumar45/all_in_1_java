@@ -20,13 +20,13 @@ public class VirtualThreadExample {
             }
         };
 
-        for (int i = 0; i < numberOfThreads; i++) {
-            Thread thread = Thread.ofVirtual().unstarted(task);
-            thread.setName("Thread-" + (i + 1));
-            // thread.setDaemon(true); // By default virtual threads are Daemon threads
-            thread.start();
-            threads.add(thread);
-        }
+        // for (int i = 0; i < numberOfThreads; i++) {
+        // Thread thread = Thread.ofVirtual().unstarted(task);
+        // thread.setName("Thread-" + (i + 1));
+        // // thread.setDaemon(true); // By default virtual threads are Daemon threads
+        // thread.start();
+        // threads.add(thread);
+        // }
 
         for (Thread thread : threads) {
             try {
